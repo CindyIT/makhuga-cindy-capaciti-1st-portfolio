@@ -74,12 +74,12 @@
 
 		 <!-- Contact Button -->
 <li class="nav-item">
-    <a class="nav-link smoth-scroll" href="#" id="contactButton">Contact</a>
+    <a class="nav-link smoth-scroll" href="#" id="contactButton">Click here to contact me</a>
 </li>
 
 <!-- Hidden Contact Box -->
 <div id="contactBox" class="footer-widget widget mb-5 mb-lg-0" style="display: none;">
-    <h6 class="mb-4">Contact Me</h6>
+    <h6 class="mb-4">Contact Me </h6>
     <button id="closeContactBox" style="float: right; border: none; background: none; font-size: 20px;">&times;</button>
     <div class="footer-contact">
         <h5><a href="mailto:thalucindy2018@gmail.com"><i class="fas fa-envelope"></i> thalucindy2018@gmail.com</a></h5>
@@ -578,92 +578,111 @@ document.querySelectorAll('.smoth-scroll').forEach(anchor => {
     <img src="assets/images/7.png" alt="Banner Description" style="width: 100%; height: auto;">
 </a>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates</title>
+  <style>
+    /* Centering the section */
+    #view-cv-certificates {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    #view-cv-certificates h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Button styling */
+    .view-button {
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .view-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Certificates Section */
+    #cv-certificates {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center; /* Center items horizontally */
+      align-items: center; /* Align items vertically */
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    }
+
+    #cv-certificates.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Individual certificate styling */
+    .certificate {
+      text-align: center;
+      width: 250px; /* Fixed width for uniform layout */
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .certificate:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Certificate title */
+    .certificate h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+   /* Download button */
+.download-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: white; /* White background */
+  color: #007bff; /* Blue text */
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 2px solid #007bff; /* Blue border for visibility */
+  transition: none; /* Remove transition */
+}
+
+.download-button:hover {
+  background-color: white; /* Maintain white background on hover */
+  color: #0056b3; /* Darker blue text on hover */
+  border-color: #0056b3; /* Darker blue border on hover */
+}
 
 
-<style>
-  /* Centering the section */
-  #view-cv-certificates {
-    text-align: center;
-    margin: 50px 0;
-  }
-
-  #view-cv-certificates h2 {
-    font-size: 24px;
-    font-weight: bold;
-  }
-
-  /* Button styling */
-  .view-button {
-    padding: 12px 24px;
-    background-color: #007bff;
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .view-button:hover {
-    background-color: #0056b3;
-  }
-
-  /* Flexbox container for certificates */
-  #cv-certificates {
-    display: none; /* Initially hidden */
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-    margin-top: 20px;
-  }
-
-  /* Individual certificate styling */
-  .certificate {
-    text-align: center;
-    width: 280px;
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .certificate:hover {
-    transform: translateY(-5px);
-  }
-
-  /* Certificate title */
-  .certificate h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  /* Download button */
-  .download-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-
-  .download-button:hover {
-    background-color: #0056b3;
-  }
-</style>
+  </style>
+</head>
+<body>
 
 <!-- View Certificates Button -->
 <div id="view-cv-certificates">
   <h2>📜 View My Certificates</h2>
-  <button class="view-button" onclick="toggleCVSection()">Show/Hide Certificates</button>
+  <button class="view-button" id="toggleButton">Show/Hide Certificates</button>
 </div>
 
-<!-- Certificates Section -->
+<!-- Certificates Section (Initially Hidden) -->
 <div id="cv-certificates">
   <div class="certificate">
     <h3>Generative AI: Introduction and Applications</h3>
@@ -677,17 +696,17 @@ document.querySelectorAll('.smoth-scroll').forEach(anchor => {
 
   <div class="certificate">
     <h3>The Full Stack Development</h3>
-    <a href="assets/" class="download-button" target="_blank">View/Download</a>
+    <a href="assets/images/C.pdf" class="download-button" target="_blank">View/Download</a>
   </div>
 
   <div class="certificate">
     <h3>Introduction to Artificial Intelligence (AI)</h3>
-    <a href="assets/" class="download-button" target="_blank">View/Download</a>
+    <a href="assets/images/D.pdf" class="download-button" target="_blank">View/Download</a>
   </div>
 
   <div class="certificate">
     <h3>Introduction to Data Analytics</h3>
-    <a href="assets/" class="download-button" target="_blank">View/Download</a>
+    <a href="assets/images/E.pdf" class="download-button" target="_blank">View/Download</a>
   </div>
 
   <div class="certificate">
@@ -696,17 +715,24 @@ document.querySelectorAll('.smoth-scroll').forEach(anchor => {
   </div>
 </div>
 
-<!-- JavaScript Function -->
+<!-- JavaScript (Placed at End for Proper Loading) -->
 <script>
-  function toggleCVSection() {
+  document.addEventListener("DOMContentLoaded", function () {
+    var button = document.getElementById("toggleButton");
     var section = document.getElementById("cv-certificates");
-    if (section.style.display === "none" || section.style.display === "") {
-      section.style.display = "flex";
-    } else {
-      section.style.display = "none";
-    }
-  }
+
+    button.addEventListener("click", function () {
+      section.classList.toggle("active");
+    });
+  });
 </script>
+
+</body>
+</html>
+
+
+</body>
+</html>
 
 <!-- Chatbot Widget -->
 <div id="chatbot" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
@@ -784,27 +810,21 @@ document.querySelectorAll('.smoth-scroll').forEach(anchor => {
 		</div>
 	</div>
 </section>
-<!-- Chatbot Section -->
-<section id="chatbot" class="chatbot">
-    <div class="chatbox" id="chatbox">
-        <div class="chatbox-header">
-            <span>💬 Cindy's Portfolio Chatbot</span> <!-- Emoji for Chatbot -->
-            <button id="toggle-chat" onclick="toggleChat()">Hide</button> <!-- Hide/Show Button -->
-        </div>
-        <div class="chatbox-body" id="chatbox-body">
-            <!-- Messages will appear here -->
-        </div>
-        <div class="chatbox-footer">
-            <input type="text" id="user-input" placeholder="Type your message..." onkeyup="checkEnter(event)">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-</section>
 
-<!-- Chatbot Styling -->
+<a href="https://www.yourwebsite.com">
+    <img src="assets/images/10.png" alt="Banner Description" style="width: 100%; height: 50;">
+</a>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Chatbox</title>
 <style>
-    /* Chatbot Styling */
     .chatbox {
+        display: none;
         position: fixed;
         bottom: 20px;
         left: 20px;
@@ -816,97 +836,6 @@ document.querySelectorAll('.smoth-scroll').forEach(anchor => {
         z-index: 9999;
         font-family: Arial, sans-serif;
     }
-
-    .chatbox-header {
-        background-color: #ff80ab;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        font-weight: bold;
-        border-radius: 10px 10px 0 0;
-    }
-
-    .chatbox-body {
-        padding: 10px;
-        overflow-y: auto;
-        height: 200px;
-        font-size: 14px;
-        color: #333;
-    }
-
-    .chatbox-footer {
-        display: flex;
-        padding: 10px;
-        border-top: 1px solid #ff80ab;
-    }
-
-    .chatbox-footer input {
-        flex-grow: 1;
-        padding: 5px;
-        border-radius: 5px;
-        font-size: 14px;
-        border: 1px solid #ff80ab;
-    }
-
-    .chatbox-footer button {
-        background-color: #ff80ab;
-        color: white;
-        padding: 5px 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .chatbox-footer button:hover {
-        background-color: #ff4081;
-    }
-
-    .user-message {
-        background-color: #ffe0f0;
-        padding: 8px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        text-align: right;
-        font-weight: bold;
-    }
-
-    .bot-message {
-        background-color: #ff80ab;
-        color: white;
-        padding: 8px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        text-align: left;
-    }
-<!-- Chatbot Structure -->
-<div class="chatbox">
-    <div class="chatbox-header">
-        Chatbot
-    </div>
-    <div class="chatbox-body" id="chatbox-body">
-        <!-- Messages will appear here -->
-    </div>
-    <div class="chatbox-footer">
-        <input type="text" id="user-input" placeholder="Type a message..." onkeydown="checkEnter(event)">
-        <button id="send-button">Send</button>
-    </div>
-</div>
-
-<!-- Chatbot Styling -->
-<style>
-    .chatbox {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        background-color: #f8bbd0;
-        border: 1px solid #ff80ab;
-        border-radius: 10px;
-        width: 300px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        z-index: 9999;
-        font-family: Arial, sans-serif;
-    }
-
     .chatbox-header {
         background-color: #ff80ab;
         color: white;
@@ -918,20 +847,6 @@ document.querySelectorAll('.smoth-scroll').forEach(anchor => {
         justify-content: space-between;
         align-items: center;
     }
-
-    #send-button {
-        background-color: #ff80ab;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    #send-button:hover {
-        background-color: #ff4081;
-    }
-
     .chatbox-body {
         padding: 10px;
         overflow-y: auto;
@@ -939,13 +854,11 @@ document.querySelectorAll('.smoth-scroll').forEach(anchor => {
         font-size: 14px;
         color: #333;
     }
-
     .chatbox-footer {
         display: flex;
         padding: 10px;
         border-top: 1px solid #ff80ab;
     }
-
     .chatbox-footer input {
         flex-grow: 1;
         padding: 5px;
@@ -953,98 +866,97 @@ document.querySelectorAll('.smoth-scroll').forEach(anchor => {
         font-size: 14px;
         border: 1px solid #ff80ab;
     }
-
-    .user-message {
-        background-color: #ffe0f0;
-        padding: 8px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        text-align: right;
-        font-weight: bold;
-    }
-
-    .bot-message {
+    .chatbox-footer button {
         background-color: #ff80ab;
         color: white;
-        padding: 8px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        text-align: left;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .chatbox-footer button:hover {
+        background-color: #ff4081;
+    }
+    #chat-button {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #ff80ab;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #chat-button:hover {
+        background-color: #ff4081;
     }
 </style>
+</head>
+<body>
 
-<!-- Script for Chatbot Functionality -->
+<!-- Chatbot Button -->
+<button id="chat-button" onclick="toggleChat()">Chat with cindy's bot</button>
+
+<!-- Chatbot -->
+<div id="chatbox" class="chatbox">
+    <div class="chatbox-header">
+        <span>Chat with me!</span>
+        <button class="close-btn" onclick="toggleChat()">X</button>
+    </div>
+    <div class="chatbox-body" id="chatbox-body"></div>
+    <div class="chatbox-footer">
+        <input type="text" id="user-input" placeholder="Type a message..." onkeydown="checkEnter(event)">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<!-- Chatbot Script -->
 <script>
-    // Predefined responses
-    const responses = {
-        "hi": "Hi! How can I help you? 😊",
-        "hello": "Hi! How can I help you? 😊",
-        "tell me about cindy": `
-            <span class="cd-words-wrapper text-color">
-                <b class="is-visible">TO MY PORTFOLIO</b>
-                <b>MAKHUGA CINDY</b>
-                <b>Is a FULLSTACK DEVELOPER</b>
-            </span>
-            <p class="fw-bold lead mt-3 mb-4 text-secondary" style="color: white;">
-                she has passion for technology drives her to constantly learn and explore new tools and frameworks.  
-                Currently, she is currently enrolled in the CapacITI Demand Program as a Full Stack Developer intern, 
-                which allows her to further hone her skills in both front-end and back-end development. 
-                she excited to continue growing in this field and contribute to creating impactful solutions.
-            </p>
-        `,
-        "who are you": "I am Cindy's portfolio chatbot, here to assist you! 😊",
-        "does cindy has experience": "YES SHE DOES 😊",
-        "what do you do": "I help users by answering basic questions about this portfolio. 💻",
-        "how can I help you with your project": "I can assist you with design queries, programming questions, and more related to rebar shear machine or other topics you may be working on. Let me know!",
-        "tell me about the rebar shear machine": "The rebar shear machine is designed to increase productivity and safety while cutting rebar in the construction industry. It’s designed with ergonomic and safety considerations to ensure ease of use and minimal human intervention.",
-        "bye": "Goodbye! Have a great day! 👋"
-    };
+    function toggleChat() {
+        const chatbox = document.getElementById("chatbox");
+        chatbox.style.display = (chatbox.style.display === "none" || chatbox.style.display === "") ? "block" : "none";
+    }
 
-    // Function to send the user's message and get a response
     function sendMessage() {
-        const userInput = document.getElementById("user-input").value.toLowerCase().trim();
-        const chatboxBody = document.getElementById("chatbox-body");
-
+        const userInput = document.getElementById("user-input").value.trim();
         if (userInput === "") return;
 
-        // Display user's message
+        const chatboxBody = document.getElementById("chatbox-body");
+        
         const userMessage = document.createElement("div");
         userMessage.classList.add("user-message");
         userMessage.textContent = userInput;
         chatboxBody.appendChild(userMessage);
-
-        // Get chatbot response
-        const botResponse = getResponse(userInput);
-
-        // Display bot's response
+        
         const botMessage = document.createElement("div");
         botMessage.classList.add("bot-message");
-        botMessage.innerHTML = botResponse;
+        botMessage.textContent = getResponse(userInput);
         chatboxBody.appendChild(botMessage);
-
-        // Scroll to the bottom of the chat
+        
         chatboxBody.scrollTop = chatboxBody.scrollHeight;
-
-        // Clear the input field
         document.getElementById("user-input").value = "";
     }
 
-    // Function to check if the user pressed Enter
     function checkEnter(event) {
         if (event.key === "Enter") {
             sendMessage();
         }
     }
 
-    // Function to get chatbot's response based on user input
     function getResponse(input) {
-        return responses[input] || "Sorry, I don't understand that. Please ask something else. 😅";
+        const responses = {
+            "hi": "Hi! How can I help you? 😊",
+            "hello": "Hello! How can I assist you? 😊",
+            "who are you": "I am Cindy's portfolio chatbot! 😊",
+            "bye": "Goodbye! Have a great day! 👋"
+        };
+        return responses[input.toLowerCase()] || "Sorry, I don't understand that. 😅";
     }
-
-    // Adding event listener for the 'Send' button
-    document.getElementById("send-button").addEventListener("click", sendMessage);
 </script>
 
+</body>
+</html>
 
 
 
