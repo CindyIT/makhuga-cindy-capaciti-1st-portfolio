@@ -46,4 +46,139 @@
 	  	<!-- <h2>Cindy.</h2> -->
 	   <img src="assets/images/1.png" alt="Company Logo" width="145" height="120">
 
-	  </a>
+	  </a>  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="fa fa-bars"></span>
+	  </button>
+  
+	  <div class="collapse navbar-collapse" id="navbarmain">
+		<ul class="navbar-nav m-auto">
+		  <li class="nav-item">
+			<a class="nav-link smoth-scroll active" href="#slider">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		<li class="nav-item">
+    <a class="nav-link smoth-scroll" href="#about">About</a>
+</li>
+
+		   <li class="nav-item"><a class="nav-link smoth-scroll" href="#services">Skills</a></li>
+		   <li class="nav-item"><a class="nav-link smoth-scroll" href="#education">Education</a></li>
+
+		   <li class="nav-item"><a class="nav-link smoth-scroll" href="#skills">Experience</a></li>
+	
+
+
+
+
+
+
+		 <!-- Contact Button -->
+<li class="nav-item">
+    <a class="nav-link smoth-scroll" href="#" id="contactButton">Click here to contact me</a>
+</li>
+
+<!-- Hidden Contact Box -->
+<div id="contactBox" class="footer-widget widget mb-5 mb-lg-0" style="display: none;">
+    <h6 class="mb-4">Contact Me </h6>
+    <button id="closeContactBox" style="float: right; border: none; background: none; font-size: 20px;">&times;</button>
+    <div class="footer-contact">
+        <h5><a href="mailto:thalucindy2018@gmail.com"><i class="fas fa-envelope"></i> thalucindy2018@gmail.com</a></h5>
+        <h5><a href="tel:+27607845549"><i class="fas fa-phone-alt"></i> +27 60 784 5549</a></h5>
+        <h5><a href="https://wa.me/27607845549" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: 0607845549</a></h5>
+        <h5><a href="https://www.google.com/maps?q=Johannesburg+Brixton+Colins+Street+179" target="_blank"><i class="fas fa-map-marker-alt"></i> Johannesburg, Brixton, Colins Street 179</a></h5>
+    </div>
+</div>
+
+<!-- JavaScript to toggle contact box -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var contactButton = document.getElementById('contactButton');
+        var contactBox = document.getElementById('contactBox');
+        var closeButton = document.getElementById('closeContactBox');
+
+        contactBox.style.display = "none"; // Ensure it's hidden by default
+
+        contactButton.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            contactBox.style.display = (contactBox.style.display === "none" || contactBox.style.display === "") ? "block" : "none";
+        });
+
+        closeButton.addEventListener('click', function() {
+            contactBox.style.display = "none";
+        });
+    });
+</script>
+
+<!-- CSS Styling -->
+<style>
+    #contactBox {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        width: 300px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: none;
+    }
+    #contactBox h6 {
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    #contactBox h5 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    #contactBox a {
+        text-decoration: none;
+        color: #007bff;
+    }
+    #contactBox a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+		</ul>
+		
+
+	
+	  </div>
+	</div>
+</nav>
+
+
+
+
+
+
+
+<!-- Navigation Menu -->
+
+
+<section class="slider" id="about" style="background: none;"> <!-- Added inline style to remove background -->
+    <div class="container" style="position: relative;">  <!-- Ensure the container is relatively positioned -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8 col-12">
+                <div class="banner-content text-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    
+                    
+                    <!-- About Me Caption -->
+                    <h1 class="cd-headline clip is-full-width mb-4" style="color: white;"> <!-- Added color to text for contrast -->
+                        WELCOME <br>
+                        <span class="cd-words-wrapper text-color">
+                            <b class="is-visible">TO MY PORTFOLIO</b>
+                            <b>I AM MAKHUGA CINDY</b>
+                            <b>FULLSTACK DEVELOPER</b>
+                        </span>
+                    </h1>
+                    <p class="fw-bold lead mt-3 mb-4 text-secondary" style="color: white;"> <!-- Ensuring text is visible over the image -->
+                        My passion for technology drives me to constantly learn and explore new tools and frameworks.  
+                        Currently, I am enrolled in the CapacITI Demand Program as a Full Stack Developer intern, 
+                        which allows me to further hone my skills in both front-end and back-end development. 
+                        I’m excited to continue growing in this field and contribute to creating impactful solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
