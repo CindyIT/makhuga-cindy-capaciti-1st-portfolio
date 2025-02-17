@@ -743,3 +743,224 @@ document.querySelectorAll('.smoth-scroll').forEach(anchor => {
   </script>
 </div>
 
+</section>
+<!-- /portfolio -->
+<section class="section experience" id="skills">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="title">
+					<h2>Work Experience</h2>
+				</div>
+			</div>	
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="content mb-4">
+					<h4>Facilitator </h4>
+					<span class="text-color">[2021-2022]</span>
+					<p>Teaching Primary LEANERS Robotics and Coding</p>
+				</div>
+				<div class="content mb-4">
+					<h4>Developer Intern</h4>
+					<span class="text-color">[June 2024-November 2024]</span>
+					<p>Interning as  web and Applicatin Developer where I have developed an E-commerce website that enable users to buy and sell their products , which served as a market place </p>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="content mb-4">
+					<h4>Teachers Assistant </h4>
+					<span class="text-color">[2022-2023]</span>
+					<p>worked as a teacher assistant </p>
+				</div>
+				<div class="content mb-4">
+					<h4>full-stack Developer Candidate </h4>
+					<span class="text-color">[2025 - till today]</span>
+					<p>Getting Hands on experience as full-stack developer and developing quality skills as a fullstack developer at CAPACITI</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="counter-wrap section-bottom">
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6">
+				<div class="counter-item mb-5 mb-lg-0">
+					<i class="ti-thumb-up"></i>
+					<span class="counter">5</span>
+					<h5>Projects Done</h5>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6">
+				<div class="counter-item">
+					<i class="ti-cup"></i>
+					<span class="counter">14</span>
+					<h5>IT Certificates Obtained</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<a href="https://www.yourwebsite.com">
+    <img src="assets/images/10.png" alt="Banner Description" style="width: 100%; height: 50;">
+</a>
+
+
+<!-- Certificates Section (Initially Hidden) -->
+<div id="cv">
+  <div class=" CV">
+    <h3>HIRE ME :</h3>
+    <a href="assets/images/h.pdf" class="download-button" target="_blank">View/Download MY CV</a>
+  </div>
+
+  
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Chatbox</title>
+<style>
+    .chatbox {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #f8bbd0;
+        border: 1px solid #ff80ab;
+        border-radius: 10px;
+        width: 300px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        font-family: Arial, sans-serif;
+    }
+    .chatbox-header {
+        background-color: #ff80ab;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .chatbox-body {
+        padding: 10px;
+        overflow-y: auto;
+        height: 200px;
+        font-size: 14px;
+        color: #333;
+    }
+    .chatbox-footer {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #ff80ab;
+    }
+    .chatbox-footer input {
+        flex-grow: 1;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 14px;
+        border: 1px solid #ff80ab;
+    }
+    .chatbox-footer button {
+        background-color: #ff80ab;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .chatbox-footer button:hover {
+        background-color: #ff4081;
+    }
+    #chat-button {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #ff80ab;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #chat-button:hover {
+        background-color: #ff4081;
+    }
+</style>
+</head>
+<body>
+
+<!-- Chatbot Button -->
+<button id="chat-button" onclick="toggleChat()">Chat with cindy's bot</button>
+
+<!-- Chatbot -->
+<div id="chatbox" class="chatbox">
+    <div class="chatbox-header">
+        <span>Chat with me!</span>
+        <button class="close-btn" onclick="toggleChat()">X</button>
+    </div>
+    <div class="chatbox-body" id="chatbox-body"></div>
+    <div class="chatbox-footer">
+        <input type="text" id="user-input" placeholder="Type a message..." onkeydown="checkEnter(event)">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<!-- Chatbot Script -->
+<script>
+    function toggleChat() {
+        const chatbox = document.getElementById("chatbox");
+        chatbox.style.display = (chatbox.style.display === "none" || chatbox.style.display === "") ? "block" : "none";
+    }
+
+    function sendMessage() {
+        const userInput = document.getElementById("user-input").value.trim();
+        if (userInput === "") return;
+
+        const chatboxBody = document.getElementById("chatbox-body");
+        
+        const userMessage = document.createElement("div");
+        userMessage.classList.add("user-message");
+        userMessage.textContent = userInput;
+        chatboxBody.appendChild(userMessage);
+        
+        const botMessage = document.createElement("div");
+        botMessage.classList.add("bot-message");
+        botMessage.textContent = getResponse(userInput);
+        chatboxBody.appendChild(botMessage);
+        
+        chatboxBody.scrollTop = chatboxBody.scrollHeight;
+        document.getElementById("user-input").value = "";
+    }
+
+    function checkEnter(event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    }
+
+    function getResponse(input) {
+        const responses = {
+            "hi": "Hi! How can I help you? 😊",
+            "hello": "Hello! How can I assist you? 😊",
+            "who are you": "I am Cindy's portfolio chatbot! 😊",
+            "bye": "Goodbye! Have a great day! 👋"
+        };
+        return responses[input.toLowerCase()] || "Sorry, I don't understand that. 😅";
+    }
+</script>
+
+</body>
+</html>
+
+
