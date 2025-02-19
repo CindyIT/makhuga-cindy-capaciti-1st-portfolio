@@ -952,22 +952,30 @@ document.querySelectorAll('.smoth-scroll').forEach(anchor => {
     function getResponse(input) {
         const responses = {
            {
-    "hi": "Hi! How can I help you? 😊",
-    "hello": "Hello! How can I assist you? 😊",
-    "who are you": "I am Cindy's portfolio chatbot! 😊",
-    "bye": "Goodbye! Have a great day! 👋",
-    "what is your name": "I am Cindy Makhuga's chatbot, here to share her portfolio information. 😊",
-    "where is Cindy located": "Cindy is located in Johannesburg, Gauteng.",
-    "what languages does Cindy speak": "Cindy speaks Tshivenda and English.",
-    "does Cindy have a driver’s license": "No, Cindy does not have a driver's license.",
-    "where can I find Cindy online": "You can find Cindy on LinkedIn: www.linkedin.com/in/makhugacindy-thalukanyo-95a7352a0",
-    "what are Cindy’s technical skills": "Cindy is skilled in Frontend Development (HTML, CSS, JavaScript, React), Backend Development (Node.js, Python, PHP, Java), and Database Management (MySQL).",
-    "what are Cindy’s soft skills": "Cindy has strong soft skills, including Problem-Solving, Adaptability, Time Management, Attention to Detail, Emotional Intelligence, Critical Thinking, Continuous Learning, Leadership, and Communication skills.",
-    "what is Cindy’s education background": "Cindy has a National Diploma in Information Technology from Vaal University of Technology (2021-2024) and completed her matric at Mugoidwa Secondary School (2010-2014).",
-    "what work experience does Cindy have": "Cindy has worked as a Facilitator at Rhulani Holdings Ltd, teaching robotics and coding, a Software Development Intern at Ebhodo Holdings working on e-commerce and online registration forms, and is currently a Full-Stack Developer candidate at Capaciti.",
-    "what are Cindy’s interests": "Cindy enjoys reading storybooks and continuously learning about technology.",
-    "can I see Cindy’s projects": "Yes! Here are some of Cindy's projects and achievements:\n- Badge: https://www.credly.com/badges/735b30f8-4fd7-4eb8-b848-c9075ac7786e/public_url\n- GitHub: https://github.com/smart-hub-BA\n- Another badge: https://www.credly.com/b",
-    "what does Cindy specialize in": "Cindy specializes in Software Development and Business Analysis, with expertise in multiple programming languages and web development principles."
+    
+   function getResponse(input) {
+    const responses = {
+        "hi": "Hi! How can I help you? 😊",
+        "hello": "Hello! How can I assist you? 😊",
+        "who are you": "I am Cindy's portfolio chatbot! 😊",
+        "bye": "Goodbye! Have a great day! 👋",
+        "what is your name": "I am Cindy Makhuga's chatbot, here to share her portfolio information. 😊",
+        "where is cindy located": "Cindy is located in Johannesburg, Gauteng.",
+        "what languages does cindy speak": "Cindy speaks Tshivenda and English.",
+        "does cindy have a driver’s license": "No, Cindy does not have a driver's license.",
+        "where can i find cindy online": "You can find Cindy on LinkedIn: www.linkedin.com/in/makhugacindy-thalukanyo-95a7352a0",
+        "what are cindy’s technical skills": "Cindy is skilled in Frontend Development (HTML, CSS, JavaScript, React), Backend Development (Node.js, Python, PHP, Java), and Database Management (MySQL).",
+        "what are cindy’s soft skills": "Cindy has strong soft skills, including Problem-Solving, Adaptability, Time Management, Attention to Detail, Emotional Intelligence, Critical Thinking, Continuous Learning, Leadership, and Communication skills.",
+        "what is cindy’s education background": "Cindy has a National Diploma in Information Technology from Vaal University of Technology (2021-2024) and completed her matric at Mugoidwa Secondary School (2010-2014).",
+        "what work experience does cindy have": "Cindy has worked as a Facilitator at Rhulani Holdings Ltd, teaching robotics and coding, a Software Development Intern at Ebhodo Holdings working on e-commerce and online registration forms, and is currently a Full-Stack Developer candidate at Capaciti.",
+        "what are cindy’s interests": "Cindy enjoys reading storybooks and continuously learning about technology.",
+        "can i see cindy’s projects": "Yes! Here are some of Cindy's projects and achievements:\n- Badge: https://www.credly.com/badges/735b30f8-4fd7-4eb8-b848-c9075ac7786e/public_url\n- GitHub: https://github.com/smart-hub-BA\n- Another badge: https://www.credly.com/b",
+        "what does cindy specialize in": "Cindy specializes in Software Development and Business Analysis, with expertise in multiple programming languages and web development principles."
+    };
+
+    input = input.toLowerCase().trim(); // Normalize input
+    return responses[input] || "Sorry, I don't understand that. 😅 Try asking about Cindy's skills, experience, or education.";
+}
 }
 
         };
